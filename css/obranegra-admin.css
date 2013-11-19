@@ -1,0 +1,9 @@
+#obranegra-admin .CodeMirror {
+  height: 40em;
+  width: 100%;
+  font-family: Menlo, monospace;
+  font-size: 11px;
+  border: 4px solid #000;
+  box-sizing: border-box;
+}
+
