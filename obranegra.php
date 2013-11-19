@@ -21,7 +21,7 @@ function obranegra_admin() {
     obranegra_save_states();
   }
 
-  $states = $on_states();
+  $states = on_states();
 
   $latest_css = '';
   if($states) {
