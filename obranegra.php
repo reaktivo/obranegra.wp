@@ -76,7 +76,7 @@ add_action( 'admin_enqueue_scripts', 'obranegra_admin_assets' );
 
 function obranegra_client_assets() {
   global $wpdb;
-  $count = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->users" );
+  $count = $wpdb->get_var( "SELECT COUNT(*) FROM " . on_table() );
   wp_enqueue_script('obranegra-states', plugins_url('states/obranegra.js', __FILE__), false, $count);
   wp_enqueue_script('ba-throttle-debounce', plugins_url('js/lib/jquery.ba-throttle-debounce.js', __FILE__), array('jquery'));
   wp_enqueue_script('obranegra-client', plugins_url('js/obranegra-client.js', __FILE__), array('jquery', 'ba-throttle-debounce'));
