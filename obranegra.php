@@ -21,7 +21,7 @@ function obranegra_admin() {
     obranegra_save_states();
   }
 
-  $states = $wpdb->get_results("SELECT * FROM " . on_table() . " SORT ON time ASC");
+  $states = $on_states();
 
   $latest_css = '';
   if($states) {
@@ -44,7 +44,7 @@ function obranegra_admin() {
 function obranegra_save_states() {
   global $wpdb;
 
-  $states = $wpdb->get_results("SELECT * FROM " . on_table());
+  $states = on_states();
   $states = array_map('obranegra_map_states', $states);
 
   $str = "window.OBRANEGRA_STATES = ";
@@ -125,6 +125,11 @@ register_activation_hook( __FILE__, 'obranegra_install' );
 function on_table() {
   global $wpdb;
   return $wpdb->prefix . "obranegra";
+}
+
+function on_states() {
+  global $wpdb;
+  return $wpdb->get_results("SELECT * FROM " . on_table() . " ORDER BY time ASC");
 }
 
 function obranegra_map_states($obj) {
