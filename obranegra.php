@@ -21,7 +21,7 @@ function obranegra_admin() {
     obranegra_save_states();
   }
 
-  $states = $wpdb->get_results("SELECT * FROM " . on_table());
+  $states = $wpdb->get_results("SELECT * FROM " . on_table() . " SORT ON time ASC");
 
   $latest_css = '';
   if($states) {
