@@ -1,5 +1,7 @@
 # Obra Negra (GRAY00)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/reaktivo/obranegra.wp.svg)](https://greenkeeper.io/)
+
 a project by Michael Ray-Von & Marcel Miranda (a component of the exhibition Building
 on Ruins)
 
